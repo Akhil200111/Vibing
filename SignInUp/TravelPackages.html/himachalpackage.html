@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibing - Himachal Pradesh Tourism</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Header Section -->
+    <header class="bg-black text-white fixed top-0 left-0 w-full z-50 shadow-md">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://flowbite.com/docs/images/logo.svg" alt="Vibing Logo" class="mr-2 h-8 sm:h-10">
+                <h1 class="text-xl sm:text-2xl font-bold">Vibing Himachal Pradesh Travel</h1>
+            </div>
+            <nav class="hidden md:flex">
+                <ul class="flex space-x-4 sm:space-x-6">
+                    <li><a href="#home" class="hover:text-gray-200">Home</a></li>
+                    <li><a href="#package" class="hover:text-gray-200">Package</a></li>
+                    <li><a href="#gallery" class="hover:text-gray-200">Gallery</a></li>
+                    <li><a href="#contact" class="hover:text-gray-200">Contact</a></li>
+                </ul>
+            </nav>
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-white focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden absolute top-16 left-0 w-full bg-black">
+                <ul class="flex flex-col items-center space-y-4 py-4">
+                    <li><a href="#home" class="hover:text-gray-200">Home</a></li>
+                    <li><a href="#package" class="hover:text-gray-200">Package</a></li>
+                    <li><a href="#gallery" class="hover:text-gray-200">Gallery</a></li>
+                    <li><a href="#contact" class="hover:text-gray-200">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-16 sm:pt-20 shadow-md">
+        <div class="h-48 sm:h-64 md:h-96 bg-cover bg-center" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Rohtang_Pass_in_Summer.jpg/1280px-Rohtang_Pass_in_Summer.jpg')">
+            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                <div class="text-center text-white px-4">
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-4">Explore the Beauty of Himachal Pradesh</h2>
+                    <p class="text-sm sm:text-base md:text-lg mb-4 sm:mb-6">Embark on a scenic journey through mountains, valleys, and adventure</p>
+                    <a href="#package" class="bg-green-500 hover:bg-green-600 text-white font-semibold py-1 sm:py-2 sm:px-6 rounded text-sm sm:text-base">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carousel Section -->
+    <section class="py-6 sm:py-12 bg-gray-50 text-center shadow-md">
+        <h2 class="text-xl sm:text-2xl font-semibold mb-2 sm:mb-4">— for every passion —</h2>
+        <div class="relative overflow-hidden">
+            <div id="carousel" class="flex transition-transform duration-500 ease-in-out">
+                <div class="flex-shrink-0 w-full sm:w-1/3">
+                    <img src="imgs/rohtang-pass.jpg" alt="Rohtang Pass" class="w-full h-64 object-cover">
+                    <div class="bg-black text-white p-2 sm:p-4">
+                        <p class="text-sm sm:text-base">Rohtang Pass - Scenic Beauty</p>
+                    </div>
+                </div>
+                <div class="flex-shrink-0 w-full sm:w-1/3">
+                    <img src="imgs/Tibetan-culture.jpg" alt="McLeod Ganj" class="w-full h-64 object-cover">
+                    <div class="bg-black text-white p-2 sm:p-4">
+                        <p class="text-sm sm:text-base">McLeod Ganj - Tibetan Culture</p>
+                    </div>
+                </div>
+                <div class="flex-shrink-0 w-full sm:w-1/3">
+                    <img src="imgs/kullu-valley.jpg" alt="Kullu Valley" class="w-full h-64 object-cover">
+                    <div class="bg-black text-white p-2 sm:p-4">
+                        <p class="text-sm sm:text-base">Kullu Valley - Nature's Paradise</p>
+                    </div>
+                </div>
+                <!-- Duplicate slides for infinite loop -->
+                <div class="flex-shrink-0 w-full sm:w-1/3">
+                    <img src="imgs/shimla-hill-station.jpg" alt="Shimla" class="w-full h-64 object-cover">
+                    <div class="bg-black text-white p-2 sm:p-4">
+                        <p class="text-sm sm:text-base">Shimla - Hill Station</p>
+                    </div>
+                </div>
+                <div class="flex-shrink-0 w-full sm:w-1/3">
+                    <img src="imgs/manali-adventure.png" alt="Manali" class="w-full h-64 object-cover">
+                    <div class="bg-black text-white p-2 sm:p-4">
+                        <p class="text-sm sm:text-base">Manali - Adventure Hub</p>
+                    </div>
+                </div>
+                <div class="flex-shrink-0 w-full sm:w-1/3">
+                    <img src="imgs/Dharamshala.jpg" alt="Dharamshala" class="w-full h-64 object-cover">
+                    <div class="bg-black text-white p-2 sm:p-4">
+                        <p class="text-sm sm:text-base">Dharamshala - Peaceful Retreat</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Package Details Section -->
+    <section id="package" class="py-6 sm:py-12 shadow-md">
+        <div class="container mx-auto px-2 sm:px-4">
+            <h2 class="text-2xl sm:text-3xl font-bold text-center mb-4 sm:mb-8">Himachal Pradesh Tourism Package</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
+                <div class="bg-white p-3 sm:p-6 rounded-lg shadow-md">
+                    <h3 class="text-lg sm:text-xl font-semibold mb-2 sm:mb-4">Package Highlights</h3>
+                    <ul class="list-disc pl-4 sm:pl-5 space-y-1 sm:space-y-2">
+                        <li>5 Days / 4 Nights stay in cozy mountain resorts</li>
+                        <li>Guided tours to Rohtang Pass, Manali, and Shimla</li>
+                        <li>Authentic Himachali cuisine with all meals included</li>
+                        <li>Visit to local monasteries and adventure activities</li>
+                        <li>Trekking and scenic valley tours</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-3 sm:p-6 rounded-lg shadow-md">
+                    <h3 class="text-lg sm:text-xl font-semibold mb-2 sm:mb-4">Itinerary</h3>
+                    <ul class="list-decimal pl-4 sm:pl-5 space-y-1 sm:space-y-2">
+                        <li><strong>Day 1:</strong> Arrival in Manali, hotel check-in</li>
+                        <li><strong>Day 2:</strong> Visit Rohtang Pass and local markets</li>
+                        <li><strong>Day 3:</strong> Travel to Shimla, explore Mall Road</li>
+                        <li><strong>Day 4:</strong> Visit McLeod Ganj and Dharamshala</li>
+                        <li><strong>Day 5:</strong> Departure from Shimla</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt-4 sm:mt-8">
+                <p class="text-lg font-semibold">Starting at $599 per person</p>
+                <a href="#contact" class="mt-2 sm:mt-4 inline-block bg-green-500 hover:bg-green-600 text-white font-semibold py-1 sm:py-2 px-2 sm:px-6 rounded text-sm sm:text-base">Inquire Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="bg-gray-200 py-6 sm:py-12 shadow-md">
+        <div class="container mx-auto px-2 sm:px-4">
+            <h2 class="text-2xl sm:text-3xl font-bold text-center mb-4 sm:mb-8">Gallery</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-4">
+                <img src="imgs/rohtang-pass.jpg" alt="Rohtang Pass" class="rounded-lg shadow-md w-full h-64 object-cover transition-transform duration-300 transform hover:scale-105 hover:shadow-lg">
+                <img src="imgs/Tibetan-culture.jpg" alt="McLeod Ganj" class="rounded-lg shadow-md w-full h-64 object-cover transition-transform duration-300 transform hover:scale-105 hover:shadow-lg">
+                <img src="imgs/kullu-valley.jpg" alt="Kullu Valley" class="rounded-lg shadow-md w-full h-64 object-cover transition-transform duration-300 transform hover:scale-105 hover:shadow-lg">
+            </div><br>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-4">
+                <img src="imgs/shimla-hill-station.jpg" alt="Shimla" class="rounded-lg shadow-md w-full h-64 object-cover transition-transform duration-300 transform hover:scale-105 hover:shadow-lg">
+                <img src="imgs/manali-adventure.png" alt="Manali" class="rounded-lg shadow-md w-full h-64 object-cover transition-transform duration-300 transform hover:scale-105 hover:shadow-lg">
+                <img src="imgs/Dharamshala.jpg" alt="Dharamshala" class="rounded-lg shadow-md w-full h-64 object-cover transition-transform duration-300 transform hover:scale-105 hover:shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-6 sm:py-12 shadow-md">
+        <div class="container mx-auto px-2 sm:px-4">
+            <h2 class="text-2xl sm:text-3xl font-bold text-center mb-4 sm:mb-8">Contact Us</h2>
+            <div class="max-w-xs sm:max-w-lg mx-auto bg-white p-3 sm:p-6 rounded-lg shadow-md">
+                <div class="space-y-3 sm:space-y-4">
+                    <div>
+                        <label for="name" class="block text-sm font-medium">Name</label>
+                        <input id="name" type="text" class="w-full p-1 sm:p-2 border rounded-lg" placeholder="Your Name">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium">Email</label>
+                        <input id="email" type="email" class="w-full p-1 sm:p-2 border rounded-lg" placeholder="Your Email">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium">Message</label>
+                        <textarea id="message" class="w-full p-1 sm:p-2 border rounded-lg" rows="3" placeholder="Your Message"></textarea>
+                    </div>
+                    <button class="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-1 sm:py-2 px-2 sm:px-4 rounded text-sm sm:text-base">Send Message</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-black text-white py-8 sm:py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 sm:grid-cols-5 gap-6 sm:gap-8 text-center sm:text-left">
+                <!-- About Us -->
+                <div>
+                    <h3 class="text-lg sm:text-xl font-semibold mb-4">ABOUT US</h3>
+                    <ul class="space-y-2 text-sm sm:text-base text-gray-200">
+                        <li><a href="#" class="hover:underline">About Me</a></li>
+                        <li><a href="#" class="hover:underline">Contact Me</a></li>
+                        <li><a href="#" class="hover:underline">Terms of Use</a></li>
+                        <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <!-- Travel Tips -->
+                <div>
+                    <h3 class="text-lg sm:text-xl font-semibold mb-4">TRAVEL TIPS</h3>
+                    <ul class="space-y-2 text-sm sm:text-base text-gray-200">
+                        <li><a href="#" class="hover:underline">Start Here</a></li>
+                        <li><a href="#" class="hover:underline">Travel Blog</a></li>
+                        <li><a href="#" class="hover:underline">Destination Guides</a></li>
+                        <li><a href="#" class="hover:underline">Favorite Hostels</a></li>
+                        <li><a href="#" class="hover:underline">Favorite Neighborhoods</a></li>
+                        <li><a href="#" class="hover:underline">Favorite Walking Tours</a></li>
+                    </ul>
+                </div>
+                <!-- Book Your Trip -->
+                <div>
+                    <h3 class="text-lg sm:text-xl font-semibold mb-4">BOOK YOUR TRIP</h3>
+                    <ul class="space-y-2 text-sm sm:text-base text-gray-200">
+                        <li><a href="#" class="hover:underline">Get Accommodation</a></li>
+                        <li><a href="#" class="hover:underline">Get Flights</a></li>
+                        <li><a href="#" class="hover:underline">Get Travel Insurance</a></li>
+                        <li><a href="#" class="hover:underline">Get Travel Credit Cards</a></li>
+                        <li><a href="#" class="hover:underline">My Favorite Companies</a></li>
+                    </ul>
+                </div>
+                <!-- Books and Courses -->
+                <div>
+                    <h3 class="text-lg sm:text-xl font-semibold mb-4">BOOKS AND COURSES</h3>
+                    <ul class="space-y-2 text-sm sm:text-base text-gray-200">
+                        <li><a href="#" class="hover:underline">Ten Years a Nomad</a></li>
+                        <li><a href="#" class="hover:underline">How To Travel The World</a></li>
+                        <li><a href="#" class="hover:underline">Destination Guidebooks</a></li>
+                        <li><a href="#" class="hover:underline">Blogging Mentorship</a></li>
+                    </ul>
+                </div>
+                <!-- Follow Me on the Web -->
+                <div>
+                    <h3 class="text-lg sm:text-xl font-semibold mb-4">FOLLOW ME ON THE WEB</h3>
+                    <div class="flex justify-center sm:justify-start space-x-4 mb-4">
+                        <a href="#" class="text-gray-200 hover:text-white">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.23 5.24c-.81.36-1.68.6-2.59.71.93-.56 1.64-1.44 1.98-2.49-.87.52-1.83.9-2.85 1.1-.82-.87-1.99-1.41-3.29-1.41-2.49 0-4.51 2.02-4.51 4.51 0 .35.04.7.12 1.03-3.75-.19-7.07-1.98-9.29-4.71-.39.67-.61 1.45-.61 2.28 0 1.57.8 2.96 2.01 3.77-.74-.02-1.44-.23-2.05-.57v.06c0 2.2 1.56 4.03 3.64 4.44-.38.1-.78.16-1.19.16-.29 0-.57-.03-.85-.08.57 1.79 2.23 3.09 4.2 3.12-1.54 1.2-3.48 1.92-5.59 1.92-.36 0-.72-.02-1.07-.06 1.99 1.28 4.36 2.03 6.9 2.03 8.26 0 12.78-6.85 12.78-12.78 0-.19 0-.38-.01-.57.88-.63 1.64-1.43 2.24-2.33z"/></svg>
+                        </a>
+                        <a href="#" class="text-gray-200 hover:text-white">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
+                        </a>
+                        <a href="#" class="text-gray-200 hover:text-white">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c-5.522 0-10 4.478-10 10 0 4.761 3.1 8.803 7.393 10.212.54.1.733-.234.733-.518 0-.256-.01-1.053-.014-1.98-2.997.55-3.635-1.447-3.635-1.447-.49-1.25-1.197-1.58-1.197-1.58-.982-.67.074-.66.074-.66 1.085.076 1.653 1.11 1.653 1.11.962 1.65 2.524 1.174 3.14.897.097-.697.377-1.174.686-1.443-2.4-.274-4.923-1.2-4.923-5.337 0-1.181.421-2.145 1.112-2.902-.112-.274-.484-1.375.106-2.865 0 0 .908-.29 2.976 1.104 0 0 .784-.024 1.388.288 1.353-.477 2.807-1.103 4.257-1.103 1.45 0 2.904.626 4.257 1.103.604-.312 1.388-.288 1.388-.288 2.067-1.394 2.975-1.104 2.975-1.104.59 1.49.218 2.591.106 2.865.691.757 1.112 1.721 1.112 2.902 0 4.145-2.523 5.062-4.927 5.333.387.335.729.995.729 2.006 0 1.445-.012 2.61-.012 2.963 0 .284.19.616.733.518C20.9 21.966 24 17.924 24 13.163c0-5.522-4.478-10-10-10z"/></svg>
+                        </a>
+                    </div>
+                    <div class="mt-4">
+                        <input type="text" placeholder="Search the site here..." class="p-2 rounded-md w-full sm:w-48 text-black">
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 text-center text-sm sm:text-base text-gray-200">
+                <p>© 2025 Vibing Himachal Pradesh Travel. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Carousel Script
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('#carousel > div');
+        const totalSlides = 2; // Corrected to reflect the original 3 slides
+        const intervalTime = 3000; // 3 seconds
+
+        function showSlide(index) {
+            // Infinite loop logic
+            if (index >= totalSlides) currentSlide = 0;
+            else if (index < 0) currentSlide = totalSlides - 1;
+            else currentSlide = index;
+            document.getElementById('carousel').style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        function autoSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        let slideInterval = setInterval(autoSlide, intervalTime);
+
+        // Pause on hover
+        document.querySelector('.overflow-hidden').addEventListener('mouseenter', () => clearInterval(slideInterval));
+        document.querySelector('.overflow-hidden').addEventListener('mouseleave', () => {
+            slideInterval = setInterval(autoSlide, intervalTime);
+        });
+    </script>
+</body>
+</html>
