@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibing India Travel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Header Section -->
+    <header class="bg-black text-white sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-6 flex flex-col sm:flex-row justify-between items-center">
+            <div class="flex justify-between items-center w-full sm:w-auto">
+                <h1 class="text-2xl sm:text-3xl font-bold">Vibing India Travel</h1>
+                <button id="menuToggle" class="sm:hidden text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+            <ul id="navLinks" class="hidden sm:flex sm:space-x-8 text-lg flex-col sm:flex-row w-full sm:w-auto mt-4 sm:mt-0">
+                <li><a href="#home" class="nav-link py-2 sm:py-0 hover:underline">Home</a></li>
+                <li><a href="#destinations" class="nav-link py-2 sm:py-0 hover:underline">Destinations</a></li>
+                <li><a href="#packages" class="nav-link py-2 sm:py-0 hover:underline">Packages</a></li>
+                <li><a href="#contact" class="nav-link py-2 sm:py-0 hover:underline">Contact</a></li>
+                <li><a href="#about" class="nav-link py-2 sm:py-0 hover:underline">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Off-Canvas Contact Form -->
+    <div id="contactOffCanvas" class="fixed inset-y-0 right-0 w-full sm:max-w-md bg-white shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out z-50">
+        <div class="flex justify-between items-center p-4 border-b">
+            <h2 class="text-xl sm:text-2xl font-bold">Contact Us</h2>
+            <button id="closeOffCanvas" class="text-gray-600 hover:text-gray-800">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="p-4 sm:p-6">
+            <form class="space-y-4">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                    <input type="text" id="name" class="mt-1 block w-full p-2 border border-gray-300 rounded-md" placeholder="Your Name">
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                    <input type="email" id="email" class="mt-1 block w-full p-2 border border-gray-300 rounded-md" placeholder="Your Email">
+                </div>
+                <div>
+                    <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                    <textarea id="message" rows="4" class="mt-1 block w-full p-2 border border-gray-300 rounded-md" placeholder="Your Message"></textarea>
+                </div>
+                <button type="button" class="w-full bg-black text-white px-4 py-2 rounded-md hover:bg-gray-800">Send Message</button>
+            </form>
+        </div>
+    </div>
+    <!-- Overlay for Off-Canvas -->
+    <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40"></div>
+
+    <!-- Carousel Section -->
+    <section id="home" class="relative">
+        <div id="carousel" class="carousel w-full h-64 sm:h-96 overflow-hidden">
+            <div class="carousel-inner flex transition-transform duration-500 ease-in-out">
+                <div class="carousel-item flex-none w-full h-64 sm:h-96 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1524492412937-b28006e4b8f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')">
+                    <div class="container mx-auto px-4 h-full flex items-center">
+                        <div class="text-white max-w-lg">
+                            <h2 class="text-2xl sm:text-3xl font-bold">Taj Mahal, Agra</h2>
+                            <p class="text-sm sm:text-base">Marvel at the timeless beauty of this iconic monument.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item flex-none w-full h-64 sm:h-96 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1582639590011-f5b1d49f5701?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')">
+                    <div class="container mx-auto px-4 h-full flex items-center">
+                        <div class="text-white max-w-lg">
+                            <h2 class="text-2xl sm:text-3xl font-bold">Jaipur, Rajasthan</h2>
+                            <p class="text-sm sm:text-base">Discover the vibrant culture of the Pink City.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item flex-none w-full h-64 sm:h-96 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1616521638338-0d6ac0eb8fb2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')">
+                    <div class="container mx-auto px-4 h-full flex items-center">
+                        <div class="text-white max-w-lg">
+                            <h2 class="text-2xl sm:text-3xl font-bold">Kerala Backwaters</h2>
+                            <p class="text-sm sm:text-base">Cruise through serene waters and lush landscapes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Carousel Controls -->
+            <button id="prevBtn" class="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 bg-white text-black p-2 rounded-full opacity-75 hover:opacity-100">❮</button>
+            <button id="nextBtn" class="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 bg-white text-black p-2 rounded-full opacity-75 hover:opacity-100">❯</button>
+        </div>
+        <script>
+            // Carousel Functionality
+            const carousel = document.getElementById('carousel');
+            const carouselInner = document.querySelector('.carousel-inner');
+            const items = document.querySelectorAll('.carousel-item');
+            let currentIndex = 0;
+
+            function updateCarousel() {
+                carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
+            }
+
+            document.getElementById('nextBtn').addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % items.length;
+                updateCarousel();
+            });
+
+            document.getElementById('prevBtn').addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + items.length) % items.length;
+                updateCarousel();
+            });
+
+            // Auto-slide every 5 seconds
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % items.length;
+                updateCarousel();
+            }, 5000);
+
+            // Off-Canvas Functionality
+            const contactLink = document.getElementById('contactLink');
+            const offCanvas = document.getElementById('contactOffCanvas');
+            const closeOffCanvas = document.getElementById('closeOffCanvas');
+            const overlay = document.getElementById('overlay');
+
+            contactLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                offCanvas.classList.remove('translate-x-full');
+                overlay.classList.remove('hidden');
+            });
+
+            closeOffCanvas.addEventListener('click', () => {
+                offCanvas.classList.add('translate-x-full');
+                overlay.classList.add('hidden');
+            });
+
+            overlay.addEventListener('click', () => {
+                offCanvas.classList.add('translate-x-full');
+                overlay.classList.add('hidden');
+            });
+
+            // Mobile Menu Toggle
+            const menuToggle = document.getElementById('menuToggle');
+            const navLinks = document.getElementById('navLinks');
+
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('hidden');
+            });
+
+            // Scroll Highlight Functionality
+            const sections = document.querySelectorAll('section');
+            const navLinksElements = document.querySelectorAll('.nav-link');
+
+            window.addEventListener('scroll', () => {
+                let currentSection = '';
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (pageYOffset >= sectionTop - 50) {
+                        currentSection = section.getAttribute('id');
+                    }
+                });
+
+                navLinksElements.forEach(link => {
+                    link.classList.remove('bg-yellow-500', 'text-black');
+                    if (link.getAttribute('href').substring(1) === currentSection) {
+                        link.classList.add('bg-yellow-500', 'text-black');
+                    }
+                });
+            });
+        </script>
+    </section>
+
+    <!-- Hero Section -->
+    <section id="destinations" class="container mx-auto px-4 py-8 sm:py-12 text-center">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Explore Incredible India</h2>
+        <p class="mb-6 max-w-xl sm:max-w-2xl mx-auto text-sm sm:text-base">Discover the vibrant culture, rich history, and stunning landscapes of India with Vibing India Travel.</p>
+        <a href="#packages" class="bg-yellow-500 text-black px-4 sm:px-6 py-2 sm:py-3 rounded-full font-semibold hover:bg-yellow-600">Book Now</a>
+    </section>
+
+    <!-- Booking Form Section -->
+    <section id="packages" class="container mx-auto px-4 py-8 sm:py-12">
+        <h2 class="text-2xl sm:text-3xl font-bold text-center mb-6 sm:mb-8">Plan Your Indian Adventure</h2>
+        <div class="max-w-xl sm:max-w-2xl mx-auto bg-white p-6 sm:p-8 rounded-lg shadow-lg">
+            <div class="space-y-4">
+                <div>
+                    <label for="destination" class="block text-sm font-medium text-gray-700">Destination</label>
+                    <select id="destination" class="mt-1 block w-full p-2 border border-gray-300 rounded-md text-sm sm:text-base">
+                        <option>Jaipur, Rajasthan</option>
+                        <option>Varanasi, Uttar Pradesh</option>
+                        <option>Kerala Backwaters, Kerala</option>
+                        <option>Leh-Ladakh, Jammu & Kashmir</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="check-in" class="block text-sm font-medium text-gray-700">Check-In Date</label>
+                    <input type="date" id="check-in" class="mt-1 block w-full p-2 border border-gray-300 rounded-md text-sm sm:text-base">
+                </div>
+                <div>
+                    <label for="check-out" class="block text-sm font-medium text-gray-700">Check-Out Date</label>
+                    <input type="date" id="check-out" class="mt-1 block w-full p-2 border border-gray-300 rounded-md text-sm sm:text-base">
+                </div>
+                <div>
+                    <label for="guests" class="block text-sm font-medium text-gray-700">Number of Guests</label>
+                    <input type="number" id="guests" min="1" class="mt-1 block w-full p-2 border border-gray-300 rounded-md text-sm sm:text-base">
+                </div>
+                <button class="w-full bg-black text-white px-4 py-2 rounded-md hover:bg-gray-800 text-sm sm:text-base">Search Packages</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="container mx-auto px-4 py-8 sm:py-12">
+        <h2 class="text-2xl sm:text-3xl font-bold text-center mb-6 sm:mb-8">About Vibing India Travel</h2>
+        <div class="max-w-3xl mx-auto text-center">
+            <p class="text-sm sm:text-base text-gray-600 mb-4">At Vibing India Travel, we are passionate about showcasing the vibrant soul of India. From the majestic forts of Rajasthan to the serene backwaters of Kerala, our mission is to craft unforgettable travel experiences that immerse you in India's rich culture, history, and natural beauty.</p>
+            <p class="text-sm sm:text-base text-gray-600">With personalized itineraries and expert guidance, we ensure every journey is seamless and filled with moments that resonate. Join us to explore Incredible India like never before!</p>
+        </div>
+    </section>
+
+    <!-- Featured Destinations Section -->
+    <section id="contact" class="container mx-auto px-4 py-8 sm:py-12">
+        <h2 class="text-2xl sm:text-3xl font-bold text-center mb-6 sm:mb-8">Featured Indian Destinations</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1582639590011-f5b1d49f5701?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Jaipur" class="h-40 sm:h-48 w-full object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg sm:text-xl font-semibold">Jaipur, Rajasthan</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">Explore the Pink City with its majestic forts and vibrant culture.</p>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1567337710282-0080f01e6e95?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Varanasi" class="h-40 sm:h-48 w-full object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg sm:text-xl font-semibold">Varanasi, Uttar Pradesh</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">Experience spirituality along the sacred Ganges River.</p>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1616521638338-0d6ac0eb8fb2?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Kerala" class="h-40 sm:h-48 w-full object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg sm:text-xl font-semibold">Kerala Backwaters, Kerala</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">Cruise through serene backwaters and lush landscapes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-black text-white py-8 sm:py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 sm:grid-cols-5 gap-6 sm:gap-8 text-center sm:text-left">
+                <!-- About Us -->
+                <div>
+                    <h3 class="text-lg sm:text-xl font-semibold mb-4">ABOUT US</h3>
+                    <ul class="space-y-2 text-sm sm:text-base text-gray-200">
+                        <li><a href="#" class="hover:underline">About Me</a></li>
+                        <li><a href="#" class="hover:underline">Contact Me</a></li>
+                        <li><a href="#" class="hover:underline">Terms of Use</a></li>
+                        <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <!-- Travel Tips -->
+                <div>
+                    <h3 class="text-lg sm:text-xl font-semibold mb-4">TRAVEL TIPS</h3>
+                    <ul class="space-y-2 text-sm sm:text-base text-gray-200">
+                        <li><a href="#" class="hover:underline">Start Here</a></li>
+                        <li><a href="#" class="hover:underline">Travel Blog</a></li>
+                        <li><a href="#" class="hover:underline">Destination Guides</a></li>
+                        <li><a href="#" class="hover:underline">Favorite Hostels</a></li>
+                        <li><a href="#" class="hover:underline">Favorite Neighborhoods</a></li>
+                        <li><a href="#" class="hover:underline">Favorite Walking Tours</a></li>
+                    </ul>
+                </div>
+                <!-- Book Your Trip -->
+                <div>
+                    <h3 class="text-lg sm:text-xl font-semibold mb-4">BOOK YOUR TRIP</h3>
+                    <ul class="space-y-2 text-sm sm:text-base text-gray-200">
+                        <li><a href="#" class="hover:underline">Get Accommodation</a></li>
+                        <li><a href="#" class="hover:underline">Get Flights</a></li>
+                        <li><a href="#" class="hover:underline">Get Travel Insurance</a></li>
+                        <li><a href="#" class="hover:underline">Get Travel Credit Cards</a></li>
+                        <li><a href="#" class="hover:underline">My Favorite Companies</a></li>
+                    </ul>
+                </div>
+                <!-- Books and Courses -->
+                <div>
+                    <h3 class="text-lg sm:text-xl font-semibold mb-4">BOOKS AND COURSES</h3>
+                    <ul class="space-y-2 text-sm sm:text-base text-gray-200">
+                        <li><a href="#" class="hover:underline">Ten Years a Nomad</a></li>
+                        <li><a href="#" class="hover:underline">How To Travel The World</a></li>
+                        <li><a href="#" class="hover:underline">Destination Guidebooks</a></li>
+                        <li><a href="#" class="hover:underline">Blogging Mentorship</a></li>
+                    </ul>
+                </div>
+                <!-- Follow Me on the Web -->
+                <div>
+                    <h3 class="text-lg sm:text-xl font-semibold mb-4">FOLLOW ME ON THE WEB</h3>
+                    <div class="flex justify-center sm:justify-start space-x-4 mb-4">
+                        <a href="#" class="text-gray-200 hover:text-white">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.23 5.24c-.81.36-1.68.6-2.59.71.93-.56 1.64-1.44 1.98-2.49-.87.52-1.83.9-2.85 1.1-.82-.87-1.99-1.41-3.29-1.41-2.49 0-4.51 2.02-4.51 4.51 0 .35.04.7.12 1.03-3.75-.19-7.07-1.98-9.29-4.71-.39.67-.61 1.45-.61 2.28 0 1.57.8 2.96 2.01 3.77-.74-.02-1.44-.23-2.05-.57v.06c0 2.2 1.56 4.03 3.64 4.44-.38.1-.78.16-1.19.16-.29 0-.57-.03-.85-.08.57 1.79 2.23 3.09 4.2 3.12-1.54 1.2-3.48 1.92-5.59 1.92-.36 0-.72-.02-1.07-.06 1.99 1.28 4.36 2.03 6.9 2.03 8.26 0 12.78-6.85 12.78-12.78 0-.19 0-.38-.01-.57.88-.63 1.64-1.43 2.24-2.33z"/></svg>
+                        </a>
+                        <a href="#" class="text-gray-200 hover:text-white">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c-5.522 0-10 4.478-10 10 0 4.761 3.1 8.803 7.393 10.212.54.1.733-.234.733-.518 0-.256-.01-1.053-.014-1.98-2.997.55-3.635-1.447-3.635-1.447-.49-1.25-1.197-1.58-1.197-1.58-.982-.67.074-.66.074-.66 1.085.076 1.653 1.11 1.653 1.11.962 1.65 2.524 1.174 3.14.897.097-.697.377-1.174.686-1.443-2.4-.274-4.923-1.2-4.923-5.337 0-1.181.421-2.145 1.112-2.902-.112-.274-.484-1.375.106-2.865 0 0 .908-.29 2.976 1.104 0 0 .784-.024 1.388.288 1.353-.477 2.807-1.103 4.257-1.103 1.45 0 2.904.626 4.257 1.103.604-.312 1.388-.288 1.388-.288 2.067-1.394 2.975-1.104 2.975-1.104.59 1.49.218 2.591.106 2.865.691.757 1.112 1.721 1.112 2.902 0 4.145-2.523 5.062-4.927 5.333.387.335.729.995.729 2.006 0 1.445-.012 2.61-.012 2.963 0 .284.19.616.733.518C20.9 21.966 24 17.924 24 13.163c0-5.522-4.478-10-10-10z"/></svg>
+                        </a>
+                        <a href="#" class="text-gray-200 hover:text-white">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
+                        </a>
+                    </div>
+                    <div class="mt-4">
+                        <input type="text" placeholder="Search the site here..." class="p-2 rounded-md w-full sm:w-48 text-black">
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 text-center text-sm sm:text-base text-gray-200">
+                <p>© 2025 Vibing India Travel. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
